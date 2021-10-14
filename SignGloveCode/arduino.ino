@@ -22,9 +22,9 @@ char temp = '0';
 int xpin = A5;
 int xadc = 0;
 int xmax = 0;
-int xmin = 1023;
+int xmin = 1023;  
 
-int ypin = A6;
+int ypin = A6; //This one should be A4
 int yadc = 0;
 int ymax = 0;
 int ymin = 1023;
@@ -49,13 +49,13 @@ int flexADC4 = 0;
 int sensorMin4 = 1023; 
 int sensorMax4 = 0;
 
-int FLEX_PIN5 = A4; 
+int FLEX_PIN5 = A4; //A4 pin is for gyroscope output (SDA), so this one should be A6
 int flexADC5 = 0; 
 int sensorMin5 = 1023; 
 int sensorMax5 = 0;
 
 //initialize switch
-int switch_pin = A7
+int switch_pin = A7 //Should be D2 pin
 
 void setup() 
 {
