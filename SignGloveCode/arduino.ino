@@ -228,3 +228,31 @@ void loop()
 
 }
 //----------------------END-----------------------------
+
+// mp3 module
+
+//#include "SD.h"
+//#define SD_ChipSelectPin 10
+//#include "TMRpcm.h"
+//#include "SPI.h"
+//
+//TMRpcm tmrpcm;
+//
+//void setup()
+//{
+//tmrpcm.speakerPin=9;
+//Serial.begin(9600);
+//if(!SD.begin(SD_ChipSelectPin))
+//{
+//  Serial.println("SD fail");
+//  return;
+//}
+//tmrpcm.setVolume(6);
+//tmrpcm.play("test.wav"); // I think we can put this command after each if statement and it should be working, will see on friday
+//
+//}
+//
+//void loop() {
+//  // put your main code here, to run repeatedly:
+//
+//}
