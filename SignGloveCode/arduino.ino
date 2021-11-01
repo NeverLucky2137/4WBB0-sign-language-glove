@@ -26,14 +26,14 @@ void command(int8_t cmd, int16_t dat)
 {
   delay(20);
  
-  cmdbuf[0] = 0x7e; // bajt startu
-  cmdbuf[1] = 0xFF; // wersja
-  cmdbuf[2] = 0x06; // liczba bajtow polecenia
-  cmdbuf[3] = cmd;  // polecenie
+  cmdbuf[0] = 0x7e; // start byte
+  cmdbuf[1] = 0xFF; // version
+  cmdbuf[2] = 0x06; // the number of bytes in command
+  cmdbuf[3] = cmd;  // command
   cmdbuf[4] = 0x00; // 0x00 = no feedback, 0x01 = feedback
-  cmdbuf[5] = (int8_t)(dat >> 8); // parametr DAT1
-  cmdbuf[6] = (int8_t)(dat); //  parametr DAT2
-  cmdbuf[7] = 0xef; // bajt konczacy
+  cmdbuf[5] = (int8_t)(dat >> 8); // parameter DAT1
+  cmdbuf[6] = (int8_t)(dat); //  parameter DAT2
+  cmdbuf[7] = 0xef; // end byte
  
   for (uint8_t i = 0; i < 8; i++)
   {
@@ -79,12 +79,12 @@ mpu6050.begin();
 mpu6050.calcGyroOffsets(true);
 delay(3000);
 mp3.begin(9600);
-delay(500); // Czekamy 500ms na inicjalizacje  
+delay(500); // Wait 500 ms for initialization
 
-command(0x09, 0x0002); // Wybieramy karte SD jako zrodlo
-delay(200); // Czekamu 200ms na inicjalizacje
+command(0x09, 0x0002); // Choose SD Card as a source
+delay(200); // Wait 200 ms for initialization
 
-command(0x06, 0x001E); // Ustaw glosnosc na 30
+command(0x06, 0x001E); // Set the volume to 30
   
 while (!Serial) 
 {
